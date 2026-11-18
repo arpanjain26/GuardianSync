@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg{fill:#08111f}
+      .panel{fill:#0e1a2e;stroke:#3bd6ff;stroke-width:2}
+      .line{stroke:#66e6ff;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+      .pipe{stroke:#7cf7b2;stroke-width:5;fill:none;stroke-dasharray:10 8;opacity:.85}
+      .node{fill:#11253f;stroke:#8af7ff;stroke-width:3}
+      .node2{fill:#122a25;stroke:#7cf7b2;stroke-width:3}
+      .label{fill:#d8f7ff;font-family:Arial, Helvetica, sans-serif;font-size:24px;font-weight:700;letter-spacing:1px}
+      .small{fill:#98b7d1;font-family:Arial, Helvetica, sans-serif;font-size:18px}
+      .title{fill:#ffffff;font-family:Arial, Helvetica, sans-serif;font-size:34px;font-weight:800}
+      .sub{fill:#7bcfff;font-family:Arial, Helvetica, sans-serif;font-size:18px}
+    </style>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="900"/>
+  <rect class="panel" x="35" y="35" width="1530" height="830" rx="24"/>
+
+  <text x="70" y="90" class="title">INDUSTRIAL POWER PLANT BLUEPRINT</text>
+  <text x="70" y="125" class="sub">Interactive SCADA map reference with machine nodes, control paths, and sensor zones</text>
+
+  <!-- Control Room -->
+  <g id="control-room">
+    <rect x="110" y="190" width="260" height="160" rx="20" class="node"/>
+    <text x="155" y="250" class="label">CONTROL ROOM</text>
+    <text x="155" y="285" class="small">Main monitoring station</text>
+  </g>
+
+  <!-- Turbine Hall -->
+  <g id="turbine-hall">
+    <rect x="490" y="170" width="340" height="220" rx="24" class="node2"/>
+    <text x="575" y="240" class="label">TURBINE HALL</text>
+    <circle id="turbine-1" cx="565" cy="305" r="38" class="node" filter="url(#glow)"/>
+    <circle id="turbine-2" cx="680" cy="305" r="38" class="node" filter="url(#glow)"/>
+    <circle id="turbine-3" cx="795" cy="305" r="38" class="node" filter="url(#glow)"/>
+  </g>
+
+  <!-- Transformer Yard -->
+  <g id="transformer-yard">
+    <rect x="980" y="170" width="280" height="220" rx="24" class="node"/>
+    <text x="1015" y="240" class="label">TRANSFORMER YARD</text>
+    <rect id="transformer-1" x="1040" y="275" width="70" height="55" rx="8" class="node2"/>
+    <rect id="transformer-2" x="1145" y="275" width="70" height="55" rx="8" class="node2"/>
+  </g>
+
+  <!-- Cooling Tower -->
+  <g id="cooling-tower">
+    <path id="cooling-tower-1" d="M1325 190 L1435 190 L1465 355 L1295 355 Z" class="node"/>
+    <text x="1310" y="240" class="label">COOLING TOWER</text>
+    <text x="1325" y="275" class="small">Heat removal zone</text>
+  </g>
+
+  <!-- Boiler Unit -->
+  <g id="boiler-unit">
+    <rect x="480" y="500" width="290" height="210" rx="24" class="node"/>
+    <text x="565" y="570" class="label">BOILER UNIT</text>
+    <rect id="boiler-1" x="545" y="610" width="70" height="60" rx="10" class="node2"/>
+    <rect id="boiler-2" x="645" y="610" width="70" height="60" rx="10" class="node2"/>
+  </g>
+
+  <!-- Valve Nodes -->
+  <g id="valve-zone">
+    <circle id="valve-1" cx="910" cy="575" r="26" class="node2"/>
+    <circle id="valve-2" cx="1010" cy="640" r="26" class="node2"/>
+    <circle id="valve-3" cx="1120" cy="585" r="26" class="node2"/>
+    <text x="870" y="530" class="label">VALVE ZONE</text>
+  </g>
+
+  <!-- Sensor points -->
+  <g id="sensor-grid">
+    <circle id="sensor-1" cx="230" cy="520" r="18" class="node"/>
+    <circle id="sensor-2" cx="330" cy="620" r="18" class="node"/>
+    <circle id="sensor-3" cx="180" cy="700" r="18" class="node"/>
+    <text x="120" y="470" class="label">SENSOR GRID</text>
+  </g>
+
+  <!-- Connections -->
+  <path id="conn-control-turbine" class="line" d="M370 270 C430 270, 445 270, 490 270"/>
+  <path id="conn-turbine-transformer" class="line" d="M830 270 C890 270, 910 270, 980 270"/>
+  <path id="conn-transformer-cooling" class="line" d="M1260 300 C1300 300, 1310 300, 1325 300"/>
+  <path id="conn-boiler-valves" class="pipe" d="M770 605 C835 605, 840 605, 885 575"/>
+  <path id="conn-boiler-valves-2" class="pipe" d="M770 640 C835 640, 930 640, 985 640"/>
+  <path id="conn-valves-transformer" class="line" d="M1120 585 C1185 560, 1230 500, 1240 390"/>
+  <path id="conn-control-boiler" class="line" d="M240 350 C240 430, 360 500, 480 560"/>
+  <path id="conn-sensor-control" class="pipe" d="M230 520 C240 450, 240 390, 240 350"/>
+  <path id="conn-sensor-boiler" class="pipe" d="M330 620 C390 620, 430 620, 480 620"/>
+  <path id="conn-sensor-turbine" class="pipe" d="M180 700 C290 700, 380 560, 520 380"/>
+
+  <!-- Footer notes -->
+  <rect x="70" y="760" width="1460" height="70" rx="18" fill="#0b1627" stroke="#21496d"/>
+  <text x="100" y="805" class="small">IDs are placed for interactive binding in React/JS. You can turn nodes red/green and animate edges based on SCADA packets.</text>
+</svg>

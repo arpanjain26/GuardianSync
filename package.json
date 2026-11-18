@@ -1,0 +1,12 @@
+{
+  "name": "guardiansync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-Powered Industrial Cybersecurity SCADA Dashboard",
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev:ai": "cd ai-engine && uvicorn app.main:app --reload --port 8000",
+    "install:all": "cd client && npm install && cd ../server && npm install"
+  }
+}

@@ -1,0 +1,60 @@
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+.vscode/
+!.vscode/extensions.json
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+client/dist/
+client/.vite/
+
+# Build outputs
+**/dist/
+**/build/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.joblib
+*.egg-info/
+.venv/
+.venv.bak/
+.venv*/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Env files and secrets
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Local data and artifacts
+ai-engine/models/*.pkl
+ai-engine/models/*.joblib
+ai-engine/models/*.onnx
+
+# Misc
+*.pid
+*.seed
+*.tgz
